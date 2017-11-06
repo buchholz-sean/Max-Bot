@@ -12,7 +12,32 @@
 git clone git@github.com:reactivepixel/Max-Bot.git
 ```
 
-## Discord Bot Connection
+
+### ENV Vars
+
+Create an ```max.config.js``` file with all the environment specific and sensitive information.
+
+```javascript
+module.exports = () => {
+  apps: [
+    {
+      name: 'max',
+      script: './bot/client.js',
+      env: {
+        TOKEN: DiscordBotToken,
+        DEBUG_MODE: '3',
+        NODE_ENV: 'development',
+      },
+    },
+  ],
+};
+```
+
+> Update ```DiscordBotToken``` with the token you receive from the next step.
+
+### Bot Token
+
+Obtain a [Discord App Bot Token](https://discordapp.com/developers/applications/me) from your registered app (or register a new one) to proceed or contact a Release Manager for Max's Dev Bot token.
 
 If working on the official team, contact your Release Manager for the Dev Bot Token and plug that into the file ```max.config.js```.
 
